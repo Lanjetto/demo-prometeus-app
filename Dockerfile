@@ -1,12 +1,13 @@
 FROM gradle:8.10-jdk21 AS builder
 WORKDIR /app
 
+# Копируем файлы проекта
 COPY gradle gradle
-COPY gradle.properties gradle.properties
 COPY build.gradle settings.gradle ./
 COPY src ./src
 
-RUN ./gradlew clean build -x test --no-daemon
+# Используем GRADLE_CMD вместо ./gradlew
+RUN gradle clean build -x test --no-daemon
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
