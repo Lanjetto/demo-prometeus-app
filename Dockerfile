@@ -7,7 +7,7 @@ COPY build.gradle settings.gradle ./
 COPY src ./src
 
 # Используем GRADLE_CMD вместо ./gradlew
-RUN gradle clean build -x test --no-daemon
+RUN gradle clean bootJar -x test --no-daemon
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
