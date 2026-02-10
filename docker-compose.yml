@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   app:
     build: .
@@ -5,7 +7,7 @@ services:
       - "8080:8080"
     restart: unless-stopped
     networks:
-      - demo-network
+      - demo-prometeus-app_demo-network
 
 networks:
   demo-network:
