@@ -7,8 +7,9 @@ services:
       - "8080:8080"
     restart: unless-stopped
     networks:
-      - demo-prometeus-app_demo-network
+      - demo-network
 
 networks:
-  demo-prometeus-app_demo-network:
-    driver: bridge
+  demo-network:
+    external: true
+    name: demo-network
