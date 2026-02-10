@@ -10,5 +10,5 @@ services:
       - demo-prometeus-app_demo-network
 
 networks:
-  demo-network:
+  demo-prometeus-app_demo-network:
     driver: bridge
