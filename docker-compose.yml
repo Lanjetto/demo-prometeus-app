@@ -6,10 +6,11 @@ services:
     ports:
       - "8080:8080"
     restart: unless-stopped
+    logging:
+      driver: "json-file"
     networks:
       - demo-network
 
 networks:
   demo-network:
     external: true
-    name: demo-network
